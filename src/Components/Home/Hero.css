@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps&display=swap');
+
+.heroGlobalBox{
+    background-image:linear-gradient(90deg,rgba(23,20,38,.7),rgba(23,20,38,.7)), url(hero.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
+.heroGlobalHeading{
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 9rem;
+    font-family: 'Elsie Swash Caps', cursive;
+}

@@ -1,0 +1,158 @@
+/* User signed in */
+.userSignedIn{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    padding-top: 30px;
+}
+.userSignedIn .userInfo > *{
+    margin: 20px 0;
+}
+.photoAlt{
+    background-color: #512DA8;
+    width: 150px;
+    height: 150px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 90px;
+    border-radius: 50%;
+}
+.userInfo h1{
+    color: #1493fa;
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+.userSignedIn button:focus{
+    outline: none;
+}
+
+/* ALert */
+.alert{
+    text-align: center;
+}
+#errorMessage{
+    color: #fff;
+    font-size: 14px;
+    background-color: red;
+    display: inline-block;
+}
+#successMessage{
+    color: #fff;
+    font-size: 14px;
+    background-color:  green;
+    display: inline-block;
+}
+.green{
+    color: green;
+}
+
+/* Sign area */
+.accountWrapper{
+    margin-top: 2%;
+}
+.signArea{
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom: 20%;
+    margin-top: 2%;
+    padding: 30px 2%;
+    display: flex;
+    box-shadow: 0 2px 10px 3px #ccc;
+}
+.signArea h2{
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 700;
+}
+/* Sign In with */
+.loginSocialNetworks{
+    width: 285px;
+    margin-bottom: 30px;
+    border-right:  1px solid #e5e5e5;
+}
+.loginSocialNetworks > *{
+    display: inline-block;
+}
+.loginSocialNetworks button{
+    width: 260px;
+    color: #fff;
+    border: none;
+    text-align: left;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.loginSocialNetworks button i{
+    line-height: 40px;
+    margin-left: 25px;
+    margin-right: 48px;
+    padding-right: 17px;
+    border-right: 1px solid #fff;
+}
+.loginSocialNetworks button:focus{
+    outline: none;
+}
+.loginSocialNetworks .googleBtn{
+    background-color: #dd4b39; 
+}
+.loginSocialNetworks .googleBtn:hover{
+    background-color: #C23321; 
+}
+.loginSocialNetworks .facebookBtn{
+    background-color: #4267b2; 
+}
+.loginSocialNetworks .facebookBtn:hover{
+    background-color: #2D4373; 
+}
+.loginSocialNetworks .githubBtn{
+    background-color: #444; 
+}
+.loginSocialNetworks .githubBtn:hover{
+    background-color: #191919; 
+}
+.loginSocialNetworks .yahooBtn{
+    background-color: #401c6d; 
+}
+.loginSocialNetworks .yahooBtn:hover{
+    background-color: #39074e; 
+}
+
+/* Form */
+.formSubmission{
+    width: 380px;
+    text-align: center;
+    padding-left: 20px;
+}
+.input{
+    outline: none; 
+    width: 100%;
+    line-height: 30px;
+    padding: 4px 20px;
+    border: 1px solid #e5e5e5;
+    color: #999;
+    margin-bottom: 20px;
+    display: block;
+    transition: all .3s ease-in-out;
+}
+.input:focus{
+    border: 1px solid #FFB606;
+}
+.formText{
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.submitBtn{
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px 30px;
+    display: inline-block;
+    background-color: #FFB606;
+}
