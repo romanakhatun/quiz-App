@@ -1,8 +1,6 @@
 # Quiz App
 #### Quiz App is a Quiz Website
 
-<br/>
-
 ### Main Featured:
     Complete Firebase Authentication
     Google Font Uses
