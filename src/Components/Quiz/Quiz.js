@@ -7,10 +7,10 @@ import Questionnaire from './Questionnaire';
 const Quiz = () => {
     document.title = WebsiteName;
 
-    const [ questions, setQuestions ] = useState([]);
-    const [ currentIndex, setCurrentIndex ] = useState(0);
-    const [ score, setScore ] = useState(0);
-    const [ showAnswer, setShowAnswer ] = useState(false);
+    const [questions, setQuestions] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [score, setScore] = useState(0);
+    const [showAnswer, setShowAnswer] = useState(false);
 
     useEffect(() => {
         fetch('https://opentdb.com/api.php?amount=10&type=multiple')
@@ -30,7 +30,7 @@ const Quiz = () => {
 
     const handleAnswer = (answer) => {
         if (!showAnswer) {
-            if (answer === questions[ currentIndex ].correct_answer) {
+            if (answer === questions[currentIndex].correct_answer) {
                 setScore(score + 1)
             }
         }
@@ -45,12 +45,12 @@ const Quiz = () => {
 
     return (
         <>
-            <Hero title="Quiz" />
+            <Hero title="Let's Start Quiz 🙋" />
             <div className="quizWrapper">
                 {questions.length > 0 ?
                     currentIndex >= questions.length ?
                         <p><strong>Game Ended !!! Your Score is:</strong> {score}</p> :
-                        <Questionnaire data={questions[ currentIndex ]} handleAnswer={handleAnswer} showAnswer={showAnswer} nextQuestion={nextQuestion} /> :
+                        <Questionnaire data={questions[currentIndex]} handleAnswer={handleAnswer} showAnswer={showAnswer} nextQuestion={nextQuestion} /> :
                     <p className="text-center">Loading...</p>
                 }
             </div>

@@ -24,3 +24,17 @@ body{
 .btn:focus{
     box-shadow: none!important;
 }
+.input{
+    outline: none; 
+    width: 100%;
+    line-height: 30px;
+    padding: 4px 20px;
+    border: 1px solid #e5e5e5;
+    color: #999;
+    margin-bottom: 20px;
+    display: block;
+    transition: all .3s ease-in-out;
+}
+.input:focus{
+    border: 1px solid #FFB606;
+}

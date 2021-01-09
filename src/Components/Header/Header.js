@@ -15,6 +15,7 @@ const Header = () => {
                     <ul className="navbarMenu">
                         <li><NavLink exact activeClassName='active' to='/'>Home</NavLink></li>
                         <li><NavLink exact to='/quiz'>Quiz</NavLink></li>
+                        <li><NavLink exact to='/contact'>Contact</NavLink></li>
                         {
                             auth.user ? <li><NavLink exact to='/entry'>Profile</NavLink></li> :
                                 <li><NavLink exact to='/entry'>Register/Login</NavLink></li>

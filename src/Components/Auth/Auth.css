@@ -127,20 +127,6 @@
     text-align: center;
     padding-left: 20px;
 }
-.input{
-    outline: none; 
-    width: 100%;
-    line-height: 30px;
-    padding: 4px 20px;
-    border: 1px solid #e5e5e5;
-    color: #999;
-    margin-bottom: 20px;
-    display: block;
-    transition: all .3s ease-in-out;
-}
-.input:focus{
-    border: 1px solid #FFB606;
-}
 .formText{
     cursor: pointer;
     margin-bottom: 10px;

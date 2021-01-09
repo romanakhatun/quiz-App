@@ -4,12 +4,13 @@ import { WebsiteName } from '../../App';
 import './Auth.css';
 
 import { useAuth } from './useAuth';
+import usePasswordToggle from './usePasswordToggle';
 
 const Entry = () => {
     document.title = "Account | " + WebsiteName;
     const auth = useAuth();
 
-    const [ user, setUser ] = useState({ name: '', email: '', password: '', phone: '', isValid: false, error: '' });
+    const [user, setUser] = useState({ name: '', email: '', password: '', phone: '', isValid: false, error: '' });
 
     // Input check
     const isValidName = email => /^[a-zA-Z ]{2,30}$/.test(email);
@@ -61,7 +62,7 @@ const Entry = () => {
             }
         }
 
-        newUser[ e.target.name ] = e.target.value;
+        newUser[e.target.name] = e.target.value;
         newUser.isValid = isValid;
         setUser(newUser);
     }
@@ -132,13 +133,19 @@ const Entry = () => {
     }
 
     // Form Toggle
-    const [ formType, setFormType ] = useState('registration');
+    const [formType, setFormType] = useState('registration');
     const signInForm = () => {
         setFormType('sign in');
     }
     const registerForm = () => {
         setFormType('registration');
     }
+
+    //Password Toggle
+    const [PasswordInputType, ToggleIcon] = usePasswordToggle();
+    const [passwordFocused, setPasswordFocused] = useState(false);
+    const [password, setPassword] = useState("");
+
 
     return (
         <section className="flexCenter user">
@@ -179,7 +186,7 @@ const Entry = () => {
                                     <h2>Register a new account</h2>
                                     <input type="text" name="name" onBlur={inputChange} className="input" placeholder="Enter your name" required />
                                     <input type="email" name="email" onBlur={inputChange} className="input" placeholder="Enter your email" required />
-                                    <input type="password" name="password" onBlur={inputChange} className="input" placeholder="Enter your password" id="password" required />
+                                    <input type={PasswordInputType} name="password" onBlur={inputChange} className="input" placeholder="Enter your password" id="password" required />
                                     <input type="password" name="confirmPassword" onBlur={inputChange} className="input" placeholder="Confirm password" required />
                                     <input type="submit" value="Register" className="submitBtn" />
                                     <p className="green formText" onClick={signInForm}>Are you a member? Login now</p>
