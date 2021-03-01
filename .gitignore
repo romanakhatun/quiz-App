@@ -10,10 +10,11 @@
 
 # production
 /build
-/.firebaseserc
-/.firebase
+
 
 /src/Components/Auth/firebase.config.js
+/firebase.json
+
 
 # misc
 .DS_Store
