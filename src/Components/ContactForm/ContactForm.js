@@ -5,6 +5,7 @@ import { WebsiteName } from '../../App';
 
 const ContactForm = () => {
     document.title = "Contact | " + WebsiteName;
+    
     (() => {
         // get all data in form and return object
         const getFormData = form => {

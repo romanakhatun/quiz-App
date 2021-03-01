@@ -5,13 +5,16 @@
     font-family: 'Roboto Slab', serif;
 }
 body{
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     font-weight: 400;
     overflow-x: hidden;
 }
 ::selection {
     background-color: #FFB606;
     color: black;
+}
+p, .btn, .input{
+    font-size: 14px;
 }
 .btn{
     border: none;
