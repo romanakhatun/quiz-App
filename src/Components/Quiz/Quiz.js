@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import './Quiz.css'
-import Hero from '../Home/Hero';
 import { WebsiteName } from '../../App';
+import { Link } from 'react-router-dom';
+import './Quiz.css';
+import Hero from '../Home/Hero';
 import Questionnaire from './Questionnaire';
+import Auth from '../Auth/useAuth';
 
 const Quiz = () => {
     document.title = WebsiteName;
+    const auth = Auth();
 
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,17 +18,7 @@ const Quiz = () => {
     useEffect(() => {
         fetch('https://opentdb.com/api.php?amount=10&type=multiple')
             .then(res => res.json())
-            .then(data => {
-                // const questions = data.results.map(question => ({
-                //     ...question,
-                //     answers: [
-                //         question.correct_answer,
-                //         ...question.incorrect_answers,
-                //     ].sort(() => Math.random - 0.5)
-                // }));
-                // setQuestions(questions);
-                setQuestions(data.results)
-            });
+            .then(data => { setQuestions(data.results) });
     }, []);
 
     const handleAnswer = (answer) => {
@@ -47,11 +40,23 @@ const Quiz = () => {
         <>
             <Hero title="Let's Start Quiz 🙋" />
             <div className="quizWrapper">
-                {questions.length > 0 ?
-                    currentIndex >= questions.length ?
-                        <p><strong>Game Ended !!! Your Score is:</strong> {score}</p> :
-                        <Questionnaire data={questions[currentIndex]} handleAnswer={handleAnswer} showAnswer={showAnswer} nextQuestion={nextQuestion} /> :
-                    <p className="text-center">Loading...</p>
+                {
+                    auth.user ?
+                        <div>
+                            {questions.length > 0 ?
+                                currentIndex >= questions.length ? (
+                                    <div>
+                                        <p><strong>Game Ended !!! Your Score is:</strong> {score}</p>
+                                        <button className="btn"><a href="/quiz">Restart Quiz</a></button>
+                                    </div>
+                                ) : (<Questionnaire data={questions[currentIndex]} handleAnswer={handleAnswer} showAnswer={showAnswer} nextQuestion={nextQuestion} />
+                                    ) : (<p className="text-center">Loading...</p>)
+                            }
+                        </div> :
+                        <div>
+                            <p>You need to first <span className="text-red"><Link to="/entry">Register/login</Link> </span> </p>
+                            <p>Then Start Quiz</p>
+                        </div>
                 }
             </div>
         </>

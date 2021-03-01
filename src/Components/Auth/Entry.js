@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import Hero from '../Home/Hero';
-import { WebsiteName } from '../../App';
 import './Auth.css';
-
 import { useAuth } from './useAuth';
-import usePasswordToggle from './usePasswordToggle';
+import { WebsiteName } from '../../App';
 
 const Entry = () => {
     document.title = "Account | " + WebsiteName;
@@ -141,11 +139,6 @@ const Entry = () => {
         setFormType('registration');
     }
 
-    //Password Toggle
-    const [PasswordInputType, ToggleIcon] = usePasswordToggle();
-    const [passwordFocused, setPasswordFocused] = useState(false);
-    const [password, setPassword] = useState("");
-
 
     return (
         <section className="flexCenter user">
@@ -186,7 +179,7 @@ const Entry = () => {
                                     <h2>Register a new account</h2>
                                     <input type="text" name="name" onBlur={inputChange} className="input" placeholder="Enter your name" required />
                                     <input type="email" name="email" onBlur={inputChange} className="input" placeholder="Enter your email" required />
-                                    <input type={PasswordInputType} name="password" onBlur={inputChange} className="input" placeholder="Enter your password" id="password" required />
+                                    <input type="password" name="password" onBlur={inputChange} className="input" placeholder="Enter your password" id="password" required />
                                     <input type="password" name="confirmPassword" onBlur={inputChange} className="input" placeholder="Confirm password" required />
                                     <input type="submit" value="Register" className="submitBtn" />
                                     <p className="green formText" onClick={signInForm}>Are you a member? Login now</p>
