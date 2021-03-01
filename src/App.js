@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AuthContextProvider } from './Components/Auth/useAuth';
 
+import './App.css';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Entry from './Components/Auth/Entry';
