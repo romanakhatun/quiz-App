@@ -10,6 +10,8 @@
 
 # production
 /build
+/.firebaseserc
+/.firebase
 
 /src/Components/Auth/firebase.config.js
 
